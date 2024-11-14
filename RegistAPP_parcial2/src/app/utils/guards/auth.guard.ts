@@ -14,7 +14,7 @@ export const authGuard: CanActivateFn = (route, state) => {
 
   if (userRole === 'profesor' && allowedRoutesForProfesor.some(path => targetRoute?.startsWith(path))) {
     return true;
-  } else if (userRole === 'alumno' && allowedRoutesForAlumno.some(path => targetRoute?.startsWith(path))) {
+  } else if (userRole === 'estudiante' && allowedRoutesForAlumno.some(path => targetRoute?.startsWith(path))) {
     return true;
   } else {
     // Redirect unauthorized users
