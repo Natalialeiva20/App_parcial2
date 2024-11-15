@@ -5,18 +5,20 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <!-- Video para el escáner QR -->
-  <video #videoElement autoplay muted playsinline style="width: 100%; height: auto;"></video>
+  <!-- Video para el escáner QR, oculto cuando isScanning es falso -->
+  <video #videoElement autoplay muted playsinline style="width: 100%; height: auto;" [hidden]="!isScanning"></video>
 
   <!-- Botón para iniciar y detener el escaneo -->
   <ion-button expand="full" color="primary" (click)="isScanning ? stopScan() : startScan()">
     {{ isScanning ? 'Detener Escaneo' : 'Iniciar Escaneo' }}
   </ion-button>
+
   <ion-item>
     <ion-label>Filtrar por Fecha</ion-label>
     <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="selectedDate" (ionChange)="filterAttendancesByDate()">
     </ion-datetime>
   </ion-item>
+
   <!-- Lista de asistencias -->
   <h3>Registro de Asistencia</h3>
   <ion-list>
@@ -30,8 +32,6 @@
     </ion-item>
   </ion-list>
 </ion-content>
-
-
 
 <ion-footer>
   <ion-toolbar>

@@ -9,6 +9,7 @@
     <ion-list>
       <!-- Ítem del menú para restablecer la contraseña -->
       <ion-item button (click)="navigateToChangePassword()">
+        <ion-icon name="lock-closed" slot="start" style="color: paleturquoise"></ion-icon>
         Restablecer Contraseña
       </ion-item>
       <!-- Otros ítems del menú -->
@@ -27,15 +28,19 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content class="ion-padding">
-    <h2>Bienvenido, {{ userName }}</h2>
+  <ion-content class="ion-padding"  >
+    <h2>Bienvenido, {{ userName }} </h2>
     <h3>Mis Secciones Registradas</h3>
 
     <div *ngIf="sections.length === 0">No hay secciones registradas para mostrar.</div>
 
+    
     <ion-list *ngIf="sections.length > 0">
-      <ion-item *ngFor="let section of sections" (click)="goToSectionAttendance(section.section_id)">
-        <ion-label>
+      <ion-item 
+        *ngFor="let section of sections" 
+        (click)="goToSectionAttendance(section.section_id)" 
+        class="ion-item1">
+        <ion-label class="Modi">
           <h2>{{ section.nombre_seccion }}</h2>
           <p>{{ section.nombre_asignatura }}</p>
         </ion-label>

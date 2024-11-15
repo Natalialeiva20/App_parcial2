@@ -14,7 +14,10 @@
 
   <!-- Listar secciones si existen en la lista -->
   <ion-list *ngIf="sections.length > 0">
-    <ion-item *ngFor="let section of sections" (click)="goToClases(section.section_id, section.nombre_seccion)">
+    <ion-item 
+      *ngFor="let section of sections" 
+      (click)="goToClases(section.section_id, section.nombre_seccion)"
+      class="section-button"  style="color:primary">
       <ion-label>
         {{ section.nombre_seccion }} - {{ section.nombre_asignatura }}
       </ion-label>

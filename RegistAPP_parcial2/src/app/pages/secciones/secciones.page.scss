@@ -1,0 +1,14 @@
+.section-button {
+    background-color: var(--ion-color-primary); /* Usar color primario */
+    border-radius: 8px;
+    margin: 8px 0;
+    --ion-item-background: transparent;
+    --ion-item-border-color: transparent;
+  }
+  
+  .section-button ion-label {
+    color: #000000; /* Color de texto negro */
+    font-weight: bold;
+  }
+  
+  
